@@ -16,11 +16,11 @@ version = list(dfLog['VERSION'])
 
 for index,f in enumerate(filenames) :
     v=version[index]
-    dfFile = dfLog[(dfLog['FILE_NAME'] == f)][['VARIABLES','TIME']]
-    x=dfFile['VARIABLES']
+    dfFile = dfLog[(dfLog['FILE_NAME'] == f)][['MEMORY','TIME']]
+    x=dfFile['MEMORY']
     y=dfFile['TIME']
-    plt.plot(x,y)
+    plt.plot(x,y,'o')
     plt.xlabel('TIME')
-    plt.ylabel('SPACE')
+    plt.ylabel('MEMORY')
     plt.title(f+' '+str(v))
     plt.show()
